@@ -2,6 +2,10 @@
   scroll-behavior: smooth;
 }
 
+body {
+  margin: 0;
+}
+
 body>h1 {
   font-size: 5em;
   text-align: center;
@@ -10,7 +14,22 @@ body>h1 {
 }
 
 body>section {
+  position: relative;
   height: 80vh;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+body>section::before {
+  content: '';
+  width: 100vw;
+  height: 75vh;
+  position: absolute;
+  background-image: url(http://deceuvel.nl/wp-content/uploads/2016/07/38667201916_ae0d696fa3_o.jpg);
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+  transform: translateX(-50%) translateY(0%);
 }
 
 ul {
@@ -47,8 +66,7 @@ aside p {
 p#overzicht {
   font-family: 'Raleway', sans-serif;
   font-size: 3em;
-  margin: 0 1em;
-  transform: translateY(82%);
+  margin: 1em 1em;
   text-align: center;
 }
 
@@ -66,6 +84,7 @@ h2 {
   margin: 0 1em;
   font-weight: 100;
   transform: translateY(50%);
+  background-color: white;
 }
 
 form {
@@ -93,6 +112,7 @@ form span p {
   font-size: 12em;
   width: 1.2em;
   border: none;
+  background-color: transparent;
 }
 
 .realTimeInfo {
@@ -119,8 +139,19 @@ form span p {
 }
 
 .spacing {
-  height: 19em;
+  height: 3em;
+  margin-top: 16em;
 }
+.spacing2 {
+  height: 3em;
+}
+
+#indexBody {
+  position: relative;
+  height: 80vh;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
 
 /* Hexagon style */
 

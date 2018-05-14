@@ -16,7 +16,7 @@
       </ul>
     </section>
     <main>
-      <div id="sla" class="spacing"></div>
+      <div id="sla" class="spacing2"></div>
       <section class="item">
         <div class="hexagon">
           <span><h1>Salade</h1></span>
@@ -53,8 +53,8 @@
           <aside class="info">
             <p>De Afrikaanse meerval leeft bij De Ceuvel in een vis tank.
               Ze maken deel uit van het aquaponics systeem.
-              Kort gezegd zorgen de vissen voor groeistoffen voor plante.
-              Het water van de vissen wordt dan weer gefiltered door deze planten.
+              Kort gezegd zorgen de vissen voor groeistoffen voor planten.
+              Het water van de vissen wordt dan weer gefilterd door deze planten.
               Zo onstaat een circulair systeem.
               De Meerval leeft in water met een temperatuur tussen 14 en 24 graden Celsius.
               Het water moet een pH waarde tussen 8 en 6 nodig</p>
@@ -128,9 +128,9 @@
       slaOogst.innerHTML = data.totalYieldSla + ' kg';
       slaOogst4mndn.innerHTML = data.totalYield4maandSla + ' kg';
 
-      if (data.tankTempVis <= 14 || data.tankTempVis >= 24) {
+      if (data.tankTempVis <= 13 || data.tankTempVis >= 25) {
         tankTempVis.setAttribute('Style', 'color: red')
-      } else if (data.tankTempVis == 15 || data.tankTempVis == 23) {
+      } else if (data.tankTempVis == 14 || data.tankTempVis == 24) {
         tankTempVis.setAttribute('Style', 'color: orange')
       } else {
         tankTempVis.setAttribute('Style', 'color: green')
