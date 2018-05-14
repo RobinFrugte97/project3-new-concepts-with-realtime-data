@@ -1,0 +1,114 @@
+<% include head.ejs %>
+  <body>
+    <h1>Jouw bestelling</h1>
+    <p id="overzicht">Tik op je bestelde gerechten om te kijken naar de herkomst!</p>
+    <section>
+      <ul>
+        <div class="hexagon2">
+          <span><li><a href="#sla">Sla</a></li></span>
+        </div>
+        <div class="hexagon2">
+          <span><li><a href="#vis">Vis</a></li></span>
+        </div>
+        <div class="hexagon2">
+          <span><li> <a href="#kruiden">Kruiden</a></li></span>
+        </div>
+      </ul>
+    </section>
+    <main>
+      <div id="sla" class="spacing"></div>
+      <section class="item">
+        <div class="hexagon">
+          <span><h1>Sla</h1></span>
+
+        </div>
+        <div class="staticInfo">
+          <aside class="info">
+
+          </aside>
+          <div class="cyclus">
+            <img src="" alt="">
+          </div>
+        </div>
+        <div class="realTimeInfo">
+          <label>Temperatuur kas:</label>
+          <li id="kamerTempSla"></li>
+          <label>Totale sla oogst:</label>
+          <li id="slaOogst"></li>
+          <label>Sla oogst 4 maanden:</label>
+          <li id="slaOogst4mndn"></li>
+        </div>
+      </section>
+      <div id="vis" class="spacing"></div>
+      <section class="item">
+        <div class="hexagon">
+          <span><h1>Vis</h1></span>
+        </div>
+        <div class="staticInfo">
+          <aside class="info">
+
+          </aside>
+          <div class="cyclus">
+            <img src="" alt="">
+          </div>
+        </div>
+        <div class="realTimeInfo">
+          <label>Temperatuur vis tank:</label>
+          <li id="tankTempVis"></li>
+          <label>pH waarde vis tank:</label>
+          <li id="pH"></li>
+        </div>
+      </section>
+      <div id="kruiden" class="spacing"></div>
+      <section class="item">
+        <div class="hexagon">
+          <span><h1>Kruiden</h1></span>
+        </div>
+        <div class="staticInfo">
+          <aside class="info">
+
+          </aside>
+          <div class="cyclus">
+            <img src="" alt="">
+          </div>
+        </div>
+        <div class="realTimeInfo">
+          <label>Temperatuur kas:</label>
+          <li id="kamerTempKruiden"></li>
+          <label>Totale sla oogst:</label>
+          <li id="kruidenOogst"></li>
+          <label>Sla oogst 4 maanden:</label>
+          <li id="kruidenOogst4mndn"></li>
+        </div>
+      </section>
+    </main>
+  </body>
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    var socket = io();
+
+    (function(){
+      socket.emit('load data');
+    })();
+    var kamerTempSla = document.getElementById('kamerTempSla')
+    var slaOogst = document.getElementById('slaOogst')
+    var slaOogst4mndn = document.getElementById('slaOogst4mndn')
+    var tankTempVis = document.getElementById('tankTempVis')
+    var pH = document.getElementById('pH')
+    var kamerTempKruiden = document.getElementById('kamerTempKruiden')
+    var kruidenOogst = document.getElementById('kruidenOogst')
+    var kruidenOogst4mndn = document.getElementById('kruidenOogst4mndn')
+
+    socket.on('loaded data', function(data){
+      console.log(data);
+      kamerTempSla.innerHTML = data.kamerTempSla;
+      slaOogst.innerHTML = data.totalYieldSla;
+      slaOogst4mndn.innerHTML = data.totalYield4maandSla;
+      tankTempVis.innerHTML = data.tankTempVis;
+      pH.innerHTML = data.pHTank;
+      kamerTempKruiden.innerHTML = data.kamerTempSla;
+      kruidenOogst.innerHTML = data.totalYieldKruiden;
+      kruidenOogst4mndn.innerHTML = data.totalYield4maandKruiden;
+    })
+  </script>
+</html>

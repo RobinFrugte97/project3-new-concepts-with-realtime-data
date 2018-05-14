@@ -1,0 +1,201 @@
+* {
+  scroll-behavior: smooth;
+}
+
+body>h1 {
+  font-size: 5em;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  text-transform: uppercase;
+}
+
+body>section {
+  height: 80vh;
+}
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  transform: translateY(100%);
+  height: 36em;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  font-family: 'Raleway', sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  list-style: none;
+  font-size: 3.5em;
+  transform: translateY(75%);
+}
+
+p#overzicht {
+  font-family: 'Raleway', sans-serif;
+  font-size: 3em;
+  margin: 0 1em;
+  transform: translateY(82%);
+  text-align: center;
+}
+
+p#index {
+  font-family: 'Raleway', sans-serif;
+  font-size: 3em;
+  margin: 0 1em;
+  text-align: center;
+}
+
+h2 {
+  font-size: 3em;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  margin: 0 1em;
+  font-weight: 100;
+  transform: translateY(50%);
+}
+
+form {
+  height: 50vh;
+  margin: 0 39vw;
+  transform: translateY(30%);
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+form span p {
+  font-size: 2.5em;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Raleway', sans-serif;
+  height: 1em;
+  color: black;
+  margin-top: .8em;
+}
+
+#tafelnummer {
+  font-size: 12em;
+  width: 1.2em;
+  border: none;
+}
+
+.item {
+  height: 104em;
+}
+
+.spacing {
+  height: 2em;
+}
+
+/* Hexagon style */
+
+.hexagon {
+  position: relative;
+  width: 200px;
+  height: 115.47px;
+  background-color: white;
+  margin: 57.74px 0;
+  box-shadow: 0 0 20px rgba(0,0,0,0.6);
+  margin-left: 1em;
+}
+
+.hexagon h1 {
+  text-transform: uppercase;
+  font-family: 'Raleway', sans-serif;
+  font-size: 2.25em;
+  text-align: center;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  transform: translateY(80%);
+}
+
+form .hexagon {
+  margin-left: 0.5em;
+}
+
+.hexagon:before,
+.hexagon:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  width: 141.42px;
+  height: 141.42px;
+  -webkit-transform: scaleY(0.5774) rotate(-45deg);
+  -ms-transform: scaleY(0.5774) rotate(-45deg);
+  transform: scaleY(0.5774) rotate(-45deg);
+  background-color: inherit;
+  left: 29.2893px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.6);
+}
+
+.hexagon:before {
+  top: -70.7107px;
+}
+
+.hexagon:after {
+  bottom: -70.7107px;
+}
+
+/*cover up extra shadows*/
+.hexagon span {
+  display: block;
+  position: absolute;
+  top:0px;
+  left: 0;
+  width:200px;
+  height:115.4701px;
+  z-index: 2;
+  background: inherit;
+}
+
+/* Second hexagon */
+
+.hexagon2 {
+  position: relative;
+  width: 300px;
+  height: 173.21px;
+  background-color: white;
+  margin: 86.60px 0;
+  box-shadow: 0 0 20px rgba(0,0,0,0.6);
+  margin: 0 1em;
+}
+
+.hexagon2:before,
+.hexagon2:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  width: 212.13px;
+  height: 212.13px;
+  -webkit-transform: scaleY(0.5774) rotate(-45deg);
+  -ms-transform: scaleY(0.5774) rotate(-45deg);
+  transform: scaleY(0.5774) rotate(-45deg);
+  background-color: inherit;
+  left: 43.9340px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.6);
+}
+
+.hexagon2:before {
+  top: -106.0660px;
+}
+
+.hexagon2:after {
+  bottom: -106.0660px;
+}
+
+/*cover up extra shadows*/
+.hexagon2 span {
+  display: block;
+  position: absolute;
+  top:0px;
+  left: 0;
+  width:300px;
+  height:173.2051px;
+  z-index: 2;
+  background: inherit;
+}
