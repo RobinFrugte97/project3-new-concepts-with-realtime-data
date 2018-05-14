@@ -33,6 +33,17 @@ li {
   transform: translateY(75%);
 }
 
+label {
+  font-size: 3em;
+}
+
+aside p {
+  font-size: 3em;
+  margin: 0 1em;
+  font-family: 'Raleway';
+  line-height: 1.5em;
+}
+
 p#overzicht {
   font-family: 'Raleway', sans-serif;
   font-size: 3em;
@@ -84,12 +95,31 @@ form span p {
   border: none;
 }
 
+.realTimeInfo {
+  margin: 0 3em;
+  font-family: 'Roboto', sans-serif;
+  text-align: right;
+}
+
+.realTimeInfo li {
+  margin-bottom: 2em;
+  text-align: right;
+}
+
+.realTimeInfo p {
+  font-size: 4em;
+}
+
+.staticInfo {
+  padding: 5em 0;
+}
+
 .item {
   height: 104em;
 }
 
 .spacing {
-  height: 2em;
+  height: 19em;
 }
 
 /* Hexagon style */
@@ -198,4 +228,40 @@ form .hexagon {
   height:173.2051px;
   z-index: 2;
   background: inherit;
+}
+
+#test1 {
+  position: absolute;
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  width: 750px;
+  height: 800px;
+  transform: translateX(-56%) translateY(11%);
+  background-image: url(http://wayoutwestaustin.com/wp-content/uploads/2013/04/HLlettuce.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: .75;
+}
+
+#test2 {
+  position: absolute;
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  width: 750px;
+  height: 800px;
+  transform: translateX(-56%) translateY(11%);
+  background-image: url(http://www.in-fisherman.com/files/2014/06/Shore-Catfish-Head-In-Fisherman.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: .75;
+}
+
+#test3 {
+  position: absolute;
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  width: 750px;
+  height: 800px;
+  transform: translateX(-56%) translateY(11%);
+  background-image: url(https://i.pinimg.com/736x/82/66/9c/82669c8283f58460a7ed025c7e3f56b5--aquaponics-greenhouse-vertical-gardens.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: .75;
 }

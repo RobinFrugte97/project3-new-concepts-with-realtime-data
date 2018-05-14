@@ -26,13 +26,13 @@ io.on('connection', function(socket){
   socket.on('load data', function(){setInterval(function generate(){
     // Math.random() * (max - min) + min
     var data = {
-      kamerTempSla: Math.floor(Math.random() * (15 - 10 + 1)) + 10,
-      totalYieldSla: 243 + Math.floor(Math.random() * 20) + 1,
-      totalYield4maandSla: 54 + Math.floor(Math.random() * 4),
-      tankTempVis: Math.floor(Math.random() * (24 - 14 + 1)) + 14,
-      pHTank: Math.floor(Math.random() * (8 - 6 + 1)) + 6,
-      totalYieldKruiden: 270 + Math.floor(Math.random() * 24),
-      totalYield4maandKruiden: 60 + Math.floor(Math.random() * 7)
+      kamerTempSla: Math.floor(Math.random() * (20 - 7 + 1)) + 7,
+      totalYieldSla: 243,
+      totalYield4maandSla: 54,
+      tankTempVis: Math.floor(Math.random() * (26 - 12 + 1)) + 12,
+      pHTank: Math.floor(Math.random() * (10 - 3 + 1)) + 3,
+      totalYieldKruiden: 270,
+      totalYield4maandKruiden: 60
     }
 
     io.emit('loaded data', data)

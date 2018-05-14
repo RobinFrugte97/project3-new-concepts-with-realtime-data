@@ -5,10 +5,10 @@
     <section>
       <ul>
         <div class="hexagon2">
-          <span><li><a href="#sla">Sla</a></li></span>
+          <span><li><a href="#sla">Salade</a></li></span>
         </div>
         <div class="hexagon2">
-          <span><li><a href="#vis">Vis</a></li></span>
+          <span><li><a href="#vis">Meerval</a></li></span>
         </div>
         <div class="hexagon2">
           <span><li> <a href="#kruiden">Kruiden</a></li></span>
@@ -19,19 +19,24 @@
       <div id="sla" class="spacing"></div>
       <section class="item">
         <div class="hexagon">
-          <span><h1>Sla</h1></span>
+          <span><h1>Salade</h1></span>
 
         </div>
         <div class="staticInfo">
           <aside class="info">
-
+            <p>Salade bestaat voornamelijk uit sla.
+              Sla is één van de planten die deel uit maken van het aquaponics systeem op De Ceuvel.
+              De planten leveren schoon water aan de vissen.
+              Dankzij de uitscheiding van de vissen groeien de planten goed.
+              De planten groeien het best bij een temperatuur tussen 10 en 16 graden Celsius.</p>
           </aside>
-          <div class="cyclus">
-            <img src="" alt="">
-          </div>
+            <div id="test1">
+
+            </div>
         </div>
         <div class="realTimeInfo">
-          <label>Temperatuur kas:</label>
+          <p>Live data:</p>
+          <label>Temperatuur greenhouse:</label>
           <li id="kamerTempSla"></li>
           <label>Totale sla oogst:</label>
           <li id="slaOogst"></li>
@@ -42,17 +47,24 @@
       <div id="vis" class="spacing"></div>
       <section class="item">
         <div class="hexagon">
-          <span><h1>Vis</h1></span>
+          <span><h1>Meerval</h1></span>
         </div>
         <div class="staticInfo">
           <aside class="info">
-
+            <p>De Afrikaanse meerval leeft bij De Ceuvel in een vis tank.
+              Ze maken deel uit van het aquaponics systeem.
+              Kort gezegd zorgen de vissen voor groeistoffen voor plante.
+              Het water van de vissen wordt dan weer gefiltered door deze planten.
+              Zo onstaat een circulair systeem.
+              De Meerval leeft in water met een temperatuur tussen 14 en 24 graden Celsius.
+              Het water moet een pH waarde tussen 8 en 6 nodig</p>
           </aside>
-          <div class="cyclus">
-            <img src="" alt="">
+          <div id="test2">
+
           </div>
         </div>
         <div class="realTimeInfo">
+          <p>Live data:</p>
           <label>Temperatuur vis tank:</label>
           <li id="tankTempVis"></li>
           <label>pH waarde vis tank:</label>
@@ -66,14 +78,18 @@
         </div>
         <div class="staticInfo">
           <aside class="info">
-
+            <p>De stikstofrijke uitscheiding van de vissen worden door de kruiden planten afgebroken in nutriënten,
+              en de kruiden planten leveren schoon water weer terug aan de vissen.
+              Zo ontstaat een natuurlijke symbiose.
+              De planten groeien het best bij een temperatuur tussen 10 en 16 graden Celsius.</p>
           </aside>
-          <div class="cyclus">
-            <img src="" alt="">
+          <div id="test3">
+
           </div>
         </div>
         <div class="realTimeInfo">
-          <label>Temperatuur kas:</label>
+          <p>Live data:</p>
+          <label>Temperatuur greenhouse:</label>
           <li id="kamerTempKruiden"></li>
           <label>Totale sla oogst:</label>
           <li id="kruidenOogst"></li>
@@ -101,14 +117,44 @@
 
     socket.on('loaded data', function(data){
       console.log(data);
-      kamerTempSla.innerHTML = data.kamerTempSla;
-      slaOogst.innerHTML = data.totalYieldSla;
-      slaOogst4mndn.innerHTML = data.totalYield4maandSla;
-      tankTempVis.innerHTML = data.tankTempVis;
-      pH.innerHTML = data.pHTank;
-      kamerTempKruiden.innerHTML = data.kamerTempSla;
-      kruidenOogst.innerHTML = data.totalYieldKruiden;
-      kruidenOogst4mndn.innerHTML = data.totalYield4maandKruiden;
+      if (data.kamerTempSla <= 9 || data.kamerTempSla >= 17) {
+        kamerTempSla.setAttribute('Style', 'color: red')
+      } else if (data.kamerTempSla == 10 || data.kamerTempSla == 16) {
+        kamerTempSla.setAttribute('Style', 'color: orange')
+      } else {
+        kamerTempSla.setAttribute('Style', 'color: green')
+      }
+      kamerTempSla.innerHTML = data.kamerTempSla + ' °C';
+      slaOogst.innerHTML = data.totalYieldSla + ' kg';
+      slaOogst4mndn.innerHTML = data.totalYield4maandSla + ' kg';
+
+      if (data.tankTempVis <= 14 || data.tankTempVis >= 24) {
+        tankTempVis.setAttribute('Style', 'color: red')
+      } else if (data.tankTempVis == 15 || data.tankTempVis == 23) {
+        tankTempVis.setAttribute('Style', 'color: orange')
+      } else {
+        tankTempVis.setAttribute('Style', 'color: green')
+      }
+      tankTempVis.innerHTML = data.tankTempVis + ' °C';
+      if (data.pHTank <= 4 || data.pHTank >= 9) {
+        pH.setAttribute('Style', 'color: red')
+      } else if (data.pHTank == 5 || data.pHTank == 8) {
+        pH.setAttribute('Style', 'color: orange')
+      } else {
+        pH.setAttribute('Style', 'color: green')
+      }
+      pH.innerHTML = 'pH ' + data.pHTank;
+
+      if (data.kamerTempSla <= 9 || data.kamerTempSla >= 17) {
+        kamerTempKruiden.setAttribute('Style', 'color: red')
+      } else if (data.kamerTempSla == 10 || data.kamerTempSla == 16) {
+        kamerTempKruiden.setAttribute('Style', 'color: orange')
+      } else {
+        kamerTempKruiden.setAttribute('Style', 'color: green')
+      }
+      kamerTempKruiden.innerHTML = data.kamerTempSla + ' °C';
+      kruidenOogst.innerHTML = data.totalYieldKruiden + ' kg';
+      kruidenOogst4mndn.innerHTML = data.totalYield4maandKruiden + ' kg';
     })
   </script>
 </html>
