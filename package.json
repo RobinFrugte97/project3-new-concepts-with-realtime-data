@@ -4,7 +4,7 @@
   "description": "Bestelling info Cafe De Ceuvel",
   "main": "app.js",
   "scripts": {
-    "start": "npm install && node app.js"
+    "start": "node app.js"
   },
   "author": "Robin Frugte",
   "license": "ISC",
